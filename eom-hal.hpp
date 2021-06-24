@@ -1,7 +1,8 @@
 #ifndef __eom_hal_hpp
 #define __eom_hal_hpp
 
-#include <FreeRTOS.h>
+#include <stdint.h>
+#include <stddef.h>
 
 //=== Housekeeping
 
