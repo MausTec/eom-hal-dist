@@ -41,7 +41,7 @@ enum eom_hal_button {
 };
 
 typedef enum eom_hal_button eom_hal_button_t;
-typedef void (*eom_hal_button_callback_t)(void);
+typedef void (*eom_hal_button_callback_t)(eom_hal_button_t, bool);
 
 eom_hal_err_t eom_hal_register_button_press(eom_hal_button_t button, eom_hal_button_callback_t cb);
 eom_hal_err_t eom_hal_register_button_hold(eom_hal_button_t button, eom_hal_button_callback_t cb);
