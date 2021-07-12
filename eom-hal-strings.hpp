@@ -6,7 +6,7 @@
 /**
  * Automatically generated string value array for the eom_hal_err enum.
  */
-const char *eom_hal_err_str[] = {
+static const char *eom_hal_err_str[] = {
     "EOM_HAL_OK",
     "EOM_HAL_FAIL",
     "EOM_HAL_ERR_HARDWARE_LOCKED",
@@ -16,7 +16,7 @@ const char *eom_hal_err_str[] = {
 /**
  * Automatically generated string value array for the eom_hal_hardware_type enum.
  */
-const char *eom_hal_hardware_type_str[] = {
+static const char *eom_hal_hardware_type_str[] = {
     "EOM_HAL_HARDWARE_TYPE_NG_PLUS",
     "EOM_HAL_HARDWARE_TYPE_EOM_3000",
     "EOM_HAL_HARDWARE_TYPE_EOM_AIO",
@@ -25,7 +25,7 @@ const char *eom_hal_hardware_type_str[] = {
 /**
  * Automatically generated string value array for the eom_hal_button enum.
  */
-const char *eom_hal_button_str[] = {
+static const char *eom_hal_button_str[] = {
     "EOM_HAL_BUTTON_BACK",
     "EOM_HAL_BUTTON_MID",
     "EOM_HAL_BUTTON_OK",
@@ -35,7 +35,7 @@ const char *eom_hal_button_str[] = {
 /**
  * Automatically generated string value array for the eom_hal_accessory_mode enum.
  */
-const char *eom_hal_accessory_mode_str[] = {
+static const char *eom_hal_accessory_mode_str[] = {
     "EOM_HAL_ACCESSORY_DISABLED",
     "EOM_HAL_ACCESSORY_SOURCE",
     "EOM_HAL_ACCESSORY_TARGET",
