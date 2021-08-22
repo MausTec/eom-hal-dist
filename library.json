@@ -1,7 +1,7 @@
 {
   "name": "eom-hal-dist",
   "description": "Maus-Tec Electronics Edge-o-Matic 3000 Hardware Abstraction Layer provides an interface to low-level hardware control",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/maustec/eom-hal-dist"
