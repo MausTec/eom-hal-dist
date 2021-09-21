@@ -45,8 +45,8 @@ static const char *eom_hal_button_event_str[] = {
  */
 static const char *eom_hal_accessory_mode_str[] = {
     "EOM_HAL_ACCESSORY_DISABLED",
-    "EOM_HAL_ACCESSORY_SOURCE",
-    "EOM_HAL_ACCESSORY_TARGET",
+    "EOM_HAL_ACCESSORY_MASTER",
+    "EOM_HAL_ACCESSORY_SLAVE",
 };
 
 #endif

@@ -91,12 +91,12 @@ enum eom_hal_accessory_mode {
     /**
      * Originate commands using the default data stream protocol.
      */
-    EOM_HAL_ACCESSORY_SOURCE,
+    EOM_HAL_ACCESSORY_MASTER,
 
     /**
      * Accept commands using the default data stream protocol.
      */
-    EOM_HAL_ACCESSORY_TARGET,
+    EOM_HAL_ACCESSORY_SLAVE,
 };
 
 typedef enum eom_hal_accessory_mode eom_hal_accessory_mode_t;
