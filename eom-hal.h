@@ -4,6 +4,18 @@
 #include <stdint.h>
 #include <stddef.h>
 
+#define EOM_HAL_RETURN_ERRCHK(expr) { \
+    eom_hal_err_t _errchk = (expr); \
+    if (EOM_HAL_OK != _errchk) { return _errchk; } \
+}
+
+#define EOM_HAL_ERR_CHK(val) { \
+    auto err = val; \
+    if (EOM_HAL_OK != err) { \
+        ESP_LOGE(TAG, "ERROR: %s returned %s", #val, eom_hal_err_str[err]); \
+    } \
+}
+
 //=== Housekeeping
 
 #ifdef __cplusplus
@@ -15,6 +27,7 @@ enum eom_hal_err {
     EOM_HAL_FAIL,
     EOM_HAL_ERR_HARDWARE_LOCKED,
     EOM_HAL_ERR_NO_STORAGE,
+    EOM_HAL_DEVICE_BUSY,
 };
 
 typedef enum eom_hal_err eom_hal_err_t;
@@ -103,7 +116,11 @@ typedef enum eom_hal_accessory_mode eom_hal_accessory_mode_t;
 
 eom_hal_accessory_mode_t eom_hal_get_accessory_mode(void);
 void eom_hal_set_accessory_mode(eom_hal_accessory_mode_t mode);
-void eom_hal_accessory_write(uint8_t *bytes, size_t length);
+void eom_hal_accessory_master_write(uint8_t address, uint8_t *bytes, size_t length);
+void eom_hal_accessory_master_read(uint8_t address, uint8_t *bytes, size_t length);
+void eom_hal_accessory_master_write_str(uint8_t address, const char *str);
+void eom_hal_accessory_master_read_str(uint8_t address, char *buffer, size_t max_length);
+void eom_hal_accessory_scan_bus(void);
 
 //=== Display
 
