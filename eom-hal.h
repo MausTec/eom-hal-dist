@@ -114,6 +114,17 @@ enum eom_hal_accessory_mode {
 
 typedef enum eom_hal_accessory_mode eom_hal_accessory_mode_t;
 
+#define EOM_HAL_ACCESSORY_BUS_DISPLAY_NAME_LEN 40
+
+struct eom_hal_accessory_bus_device {
+    char display_name[EOM_HAL_ACCESSORY_BUS_DISPLAY_NAME_LEN];
+    uint8_t address;
+};
+
+typedef struct eom_hal_accessory_bus_device eom_hal_accessory_bus_device_t;
+
+typedef void (*eom_hal_accessory_scan_callback_t)(eom_hal_accessory_bus_device_t*, void*);
+
 eom_hal_accessory_mode_t eom_hal_get_accessory_mode(void);
 void eom_hal_set_accessory_mode(eom_hal_accessory_mode_t mode);
 void eom_hal_accessory_master_write(uint8_t address, uint8_t *bytes, size_t length);
@@ -121,6 +132,7 @@ void eom_hal_accessory_master_read(uint8_t address, uint8_t *bytes, size_t lengt
 void eom_hal_accessory_master_write_str(uint8_t address, const char *str);
 void eom_hal_accessory_master_read_str(uint8_t address, char *buffer, size_t max_length);
 void eom_hal_accessory_scan_bus(void);
+void eom_hal_accessory_scan_bus_p(eom_hal_accessory_scan_callback_t cb, void *param);
 
 //=== Display
 
