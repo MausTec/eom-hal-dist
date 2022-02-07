@@ -156,6 +156,10 @@ void eom_hal_set_rgb_led(uint8_t i, eom_hal_color_t color);
 eom_hal_err_t eom_hal_get_device_serial(char *dst, size_t len);
 eom_hal_err_t eom_hal_set_device_serial(char *serial);
 
+//=== SD Card
+const char* eom_hal_get_sd_mount_point(void);
+long long int eom_hal_get_sd_size_bytes(void);
+
 #ifdef __cplusplus
 }
 #endif
