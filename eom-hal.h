@@ -10,7 +10,7 @@
 }
 
 #define EOM_HAL_ERR_CHK(val) { \
-    auto err = val; \
+    eom_hal_err_t err = val; \
     if (EOM_HAL_OK != err) { \
         ESP_LOGE(TAG, "ERROR: %s returned %s", #val, eom_hal_err_str[err]); \
     } \
