@@ -12,6 +12,7 @@ static const char *eom_hal_err_str[] = {
     "EOM_HAL_ERR_HARDWARE_LOCKED",
     "EOM_HAL_ERR_NO_STORAGE",
     "EOM_HAL_DEVICE_BUSY",
+    "EOM_HAL_TIMEOUT",
 };
 
 /**
