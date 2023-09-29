@@ -38,8 +38,15 @@ static const char *eom_hal_button_str[] = {
  * Automatically generated string value array for the eom_hal_button_event enum.
  */
 static const char *eom_hal_button_event_str[] = {
-    "EOM_HAL_BUTTON_PRESS",
-    "EOM_HAL_BUTTON_HOLD",
+    "typedef",
+    "typedef",
+    "eom_hal_err_t",
+    "eom_hal_err_t",
+    "eom_hal_err_t",
+    "struct",
+    "uint8_t",
+    "uint8_t",
+    "uint8_t",
 };
 
 /**

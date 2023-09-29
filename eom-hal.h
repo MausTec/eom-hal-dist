@@ -71,10 +71,7 @@ enum eom_hal_button {
 
 typedef enum eom_hal_button eom_hal_button_t;
 
-enum eom_hal_button_event {
-    EOM_HAL_BUTTON_PRESS,
-    EOM_HAL_BUTTON_HOLD,
-};
+enum eom_hal_button_event { EOM_HAL_BUTTON_PRESS, EOM_HAL_BUTTON_HOLD, EOM_HAL_BUTTON_DOWN };
 
 typedef enum eom_hal_button_event eom_hal_button_event_t;
 
@@ -149,12 +146,10 @@ eom_hal_accessory_mode_t eom_hal_get_accessory_mode(void);
 void eom_hal_set_accessory_mode(eom_hal_accessory_mode_t mode);
 void eom_hal_accessory_master_write(uint8_t address, uint8_t* bytes, size_t length);
 void eom_hal_accessory_master_read(uint8_t address, uint8_t* bytes, size_t length);
-void eom_hal_accessory_master_read_register(
-    uint8_t address, uint8_t reg, uint8_t* bytes, size_t length
-);
-void eom_hal_accessory_master_write_register(
-    uint8_t address, uint8_t reg, uint8_t* bytes, size_t length
-);
+void eom_hal_accessory_master_read_register(uint8_t address, uint8_t reg, uint8_t* bytes,
+                                            size_t length);
+void eom_hal_accessory_master_write_register(uint8_t address, uint8_t reg, uint8_t* bytes,
+                                             size_t length);
 void eom_hal_accessory_master_write_str(uint8_t address, const char* str);
 void eom_hal_accessory_master_read_str(uint8_t address, char* buffer, size_t max_length);
 eom_hal_err_t eom_hal_accessory_master_probe(uint8_t address);
