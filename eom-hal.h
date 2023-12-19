@@ -63,10 +63,10 @@ void eom_hal_deinit(void);
 //=== Button Registration
 
 enum eom_hal_button {
-    EOM_HAL_BUTTON_BACK,
-    EOM_HAL_BUTTON_MID,
-    EOM_HAL_BUTTON_OK,
-    EOM_HAL_BUTTON_MENU,
+    EOM_HAL_BUTTON_BACK = (1 << 0),
+    EOM_HAL_BUTTON_MID = (1 << 1),
+    EOM_HAL_BUTTON_OK = (1 << 2),
+    EOM_HAL_BUTTON_MENU = (1 << 3),
 };
 
 typedef enum eom_hal_button eom_hal_button_t;
@@ -77,12 +77,8 @@ typedef enum eom_hal_button_event eom_hal_button_event_t;
 
 typedef void (*eom_hal_button_callback_t)(eom_hal_button_t, eom_hal_button_event_t);
 
-/** @deprecated use eom_hal_register_button_handler */
-eom_hal_err_t eom_hal_register_button_press(eom_hal_button_t button, eom_hal_button_callback_t cb);
-/** @deprecated use eom_hal_register_button_handler */
-eom_hal_err_t eom_hal_register_button_hold(eom_hal_button_t button, eom_hal_button_callback_t cb);
-
 eom_hal_err_t eom_hal_register_button_handler(eom_hal_button_callback_t cb);
+uint8_t eom_hal_get_button_state(void);
 
 //=== Rotary Encoder
 
@@ -98,8 +94,6 @@ typedef void (*eom_hal_encoder_callback_t)(int delta);
 void eom_hal_set_encoder_color(eom_hal_color_t color);
 void eom_hal_set_encoder_rgb(uint8_t r, uint8_t g, uint8_t b);
 void eom_hal_set_encoder_brightness(uint8_t bright);
-/** @deprecated use eom_hal_register_encoder_handler*/
-void eom_hal_register_encoder_change(eom_hal_encoder_callback_t cb);
 void eom_hal_register_encoder_handler(eom_hal_encoder_callback_t cb);
 
 //=== Pressure
