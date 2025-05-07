@@ -71,7 +71,11 @@ enum eom_hal_button {
 
 typedef enum eom_hal_button eom_hal_button_t;
 
-enum eom_hal_button_event { EOM_HAL_BUTTON_PRESS, EOM_HAL_BUTTON_HOLD, EOM_HAL_BUTTON_DOWN };
+enum eom_hal_button_event {
+    EOM_HAL_BUTTON_PRESS,
+    EOM_HAL_BUTTON_HOLD,
+    EOM_HAL_BUTTON_DOWN,
+};
 
 typedef enum eom_hal_button_event eom_hal_button_event_t;
 
@@ -98,8 +102,15 @@ void eom_hal_register_encoder_handler(eom_hal_encoder_callback_t cb);
 
 //=== Pressure
 uint16_t eom_hal_get_pressure_reading(void);
-uint8_t eom_hal_get_sensor_sensitivity(void);
+void eom_hal_set_sensor_offset(uint8_t offset);
+uint8_t eom_hal_get_sensor_gain(void);
+void eom_hal_set_sensor_gain(uint8_t gain);
+uint8_t eom_hal_get_sensor_gain(void);
+
+/** @deprecated */
 void eom_hal_set_sensor_sensitivity(uint8_t sensitivity);
+/** @deprecated */
+uint8_t eom_hal_get_sensor_sensitivity(void);
 
 //=== Vibration
 uint8_t eom_hal_get_motor_speed(void);
