@@ -40,6 +40,7 @@ enum eom_hal_err {
     EOM_HAL_ERR_NO_STORAGE,
     EOM_HAL_DEVICE_BUSY,
     EOM_HAL_TIMEOUT,
+    EOM_HAL_AUTO_CONFIG_FAIL,
 };
 
 typedef enum eom_hal_err eom_hal_err_t;
@@ -103,7 +104,8 @@ void eom_hal_register_encoder_handler(eom_hal_encoder_callback_t cb);
 //=== Pressure
 uint16_t eom_hal_get_pressure_reading(void);
 void eom_hal_set_sensor_offset(uint8_t offset);
-uint8_t eom_hal_get_sensor_gain(void);
+uint8_t eom_hal_get_sensor_offset(void);
+void eom_hal_auto_sensor_offset(void);
 void eom_hal_set_sensor_gain(uint8_t gain);
 uint8_t eom_hal_get_sensor_gain(void);
 

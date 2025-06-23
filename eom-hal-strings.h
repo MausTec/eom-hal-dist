@@ -13,6 +13,7 @@ static const char *eom_hal_err_str[] = {
     "EOM_HAL_ERR_NO_STORAGE",
     "EOM_HAL_DEVICE_BUSY",
     "EOM_HAL_TIMEOUT",
+    "EOM_HAL_AUTO_CONFIG_FAIL",
 };
 
 /**
